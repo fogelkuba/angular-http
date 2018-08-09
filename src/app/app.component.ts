@@ -7,7 +7,7 @@ import {ServerService} from "./server.service";
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    constructor(serverService: ServerService){}
+
     servers = [
         {
             name: 'Testserver',
@@ -20,6 +20,8 @@ export class AppComponent {
             id: this.generateId()
         }
     ];
+    constructor(private serverService: ServerService){}
+
 
     onSave() {
         this.serverService.storeServers(this.servers)

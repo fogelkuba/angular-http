@@ -10,6 +10,7 @@ export class ServerService {
     }
 
     storeServers(servers: any[]) {
-        return this.http.post('https://udemy-ng-http-30225.firebaseio.com/', servers);
+        
+        return this.http.post('https://udemy-ng-http-30225.firebaseio.com/data.json', servers);
     }
 }
