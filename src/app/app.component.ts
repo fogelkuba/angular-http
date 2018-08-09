@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ServerService} from "./server.service";
 
 @Component({
     selector: 'app-root',
@@ -6,6 +7,7 @@ import {Component} from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    constructor(serverService: ServerService){}
     servers = [
         {
             name: 'Testserver',
@@ -18,6 +20,15 @@ export class AppComponent {
             id: this.generateId()
         }
     ];
+
+    onSave() {
+        this.serverService.storeServers(this.servers)
+            .subscribe(
+                resp => {
+                    console.log(resp);
+                }
+            );
+    }
 
     onAddServer(name: string) {
         this.servers.push({
