@@ -33,7 +33,7 @@ export class AppComponent {
     }
 
     onGet() {
-        this.serverService.getServers(this.servers)
+        this.serverService.getServers()
             .subscribe(
                 (resp: Response) => {
                     const data = resp.json();
