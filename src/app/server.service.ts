@@ -11,7 +11,7 @@ export class ServerService {
 
     storeServers(servers: any[]) {
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post('https://udemy-ng-http-30225.firebaseio.com/data.json', servers);
+        return this.http.put('https://udemy-ng-http-30225.firebaseio.com/data.json', servers);
     }
 
     getServers() {
